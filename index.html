@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="bg-success">
+        <h1 class="text-lg-center font-weight-bolder text-dark" >Weather Dashboard</h1>
+    </header>
+    <main>
+        <aside class="d-inline-block card col-3  justify-content-around">
+            <h2>Search for a City:</h2>
+            <input type="text" name="search" id="search" class="w-100">
+            <button class="w-100 bg-success rounded-pill m-1" id="searchbtn">Search</button>
+            <div class="card">
+                <button class="w-100 bg-secondary rounded-pill m-1" id="austin">Austin</button>
+                <button class="w-100 bg-secondary rounded-pill m-1" id="chicago">Chicago</button>
+                <button class="w-100 bg-secondary rounded-pill m-1" id="newYork">New York</button>
+                <button class="w-100 bg-secondary rounded-pill m-1" id="orlando">Orlando</button>
+                <button class="w-100 bg-secondary rounded-pill m-1" id="sanFrancisco">San Francisco</button>
+                <button class="w-100 bg-secondary rounded-pill m-1" id="seattle">Seatle</button>
+                <button class="w-100 bg-secondary rounded-pill m-1" id="denver">Denver</button>
+                <button class="w-100 bg-secondary rounded-pill m-1" id="atlanta">Atlanta</button>
+            </div>
+        </aside>
+
+        <section class= "card d-inline-block border-dark col-8 float-right">
+            <h2> Atlanta</h2>
+            <p>Temp: <span id="mainTemp"></span></p>
+            <p>Wind: <span id="mainWind"></span></p>
+            <p>Humidity: <span id="mainHumidity"></span></p>
+            <p>UV Index: <span id="mainUV"></span></p>
+            
+        </section>
+        <section class="card d-flex col-8 float-right">
+            <h2>5-Day Forcast</h2>
+            <div class ="row justify-content-between">
+                <div id="card1" class="card col-2 bg-dark text-white">
+                    <h3></h3>
+                    <span></span>
+                    <p>Temp: <span></span></p>
+                    <p>Wind: <span></span></p>
+                    <p>Humidity: <span></span></p>
+                </div>
+                <div id="card2" class="card col-2 bg-dark text-white">
+                    <h3></h3>
+                    <span></span>
+                    <p>Temp: <span></span></p>
+                    <p>Wind: <span></span></p>
+                    <p>Humidity: <span></span></p>
+                </div>
+                <div id="card3" class="card col-2 bg-dark text-white">
+                    <h3></h3>
+                    <span></span>
+                    <p>Temp: <span></span></p>
+                    <p>Wind: <span></span></p>
+                    <p>Humidity: <span></span></p>
+                </div>
+                <div id="card4" class="card col-2 bg-dark text-white">
+                    <h3></h3>
+                    <span></span>
+                    <p>Temp: <span></span></p>
+                    <p>Wind: <span></span></p>
+                    <p>Humidity: <span></span></p>
+                </div>
+                <div id="card5" class="card col-2 bg-dark text-white">
+                    <h3></h3>
+                    <span></span>
+                    <p>Temp: <span></span></p>
+                    <p>Wind: <span></span></p>
+                    <p>Humidity: <span></span></p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    
+    
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
