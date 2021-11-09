@@ -1,35 +1,37 @@
 var weatherdata;
 var APIKey = "4a3dc3901d5f6bf89db553e90f0442e3";
 var cityName = 'Atlanta';
-var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + APIKey;
+var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + APIKey;
 var queryURL7Day;
 var cardEL = [$('#card1'),$('#card2'),$('#card3'),$('#card4'),$('#card5')];
 
 
-function setCity(city) {
-  if (this.value !== undefined) {
-    var city = this.value;
-  }
-  else if($("#search").val() !== undefined){
+function setCity() {
+  var city;
+  if($("#search").val() !== undefined){
     city = $("#search").val();
     $("#search").text("");
   }
   else {
     city = cityName
   }
-
-  queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey;
+  queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey;
     fetch(queryURL)
         .then(function (response) {
           return response.json();
         })
         .then(function (data) {
           console.log(data);
-          cityName = data.name;
-          queryURL7Day = "https://api.openweathermap.org/data/2.5/onecall?lat="+ data.coord.lat +"&lon=" + data.coord.lon + "&&appid=" + APIKey;
-          console.log(queryURL7Day);
-          setData();
-        });
+          if(data.name) {
+            cityName = data.name;
+            queryURL7Day = "https://api.openweathermap.org/data/2.5/onecall?lat="+ data.coord.lat +"&lon=" + data.coord.lon + "&&appid=" + APIKey;
+            console.log(queryURL7Day);
+            setData();
+          }
+          else {
+            alert('Name not found');
+          }
+          });
       }
 function setData() {
     fetch(queryURL7Day)
